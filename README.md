@@ -261,7 +261,7 @@ it will help in the following ways:
 * Debug the data prepraration pipeline
 * Debug the pipeline built
 
-We are going to ilustrate two simple tests, but feel free to add some more complex ones:
+We are going to ilustrate few simple tests, but feel free to add some more complex ones:
 * Testing transformations
 * Testing the tokenizer extensivelly
 * Test model architecture: Does it converge? Can in actually learn?
