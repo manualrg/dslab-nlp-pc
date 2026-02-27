@@ -234,24 +234,16 @@ Instructions (03_exp_hpt_nb.ipynb):
     * Use Stemming for term standartization, with only unigrams
     * Use early stopping with GBT
     * Select the proper vectorization and NB combination
-2. GridSearchCV to run the set of experiments and get the summary, store it in interim/.
+2. GridSearchCV to run the set of experiments and get the summary, store it in `interim/exp01_hpt_nb/df_exp_summary.csv`.
 
 
 Instructions (04_exp_hpt_gbt.ipynb):
 1. Build a sklearn Pipeline that fits a [GBT](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html).
 * Use Stemming for term standartization.
 * Use early stopping with GBT
-2. GridSearchCV to run the set of experiments and get the summary, store it in interim/.
+2. GridSearchCV to run the set of experiments and get the summary, store it in `interim/exp01_hpt_nb/df_exp_summary.csv`.
 
-Run (at least) the following HP campaign:
-```python
-    # Hyperparams for XXXVectorizer: Controls the vocabulary size and selection
-    # Decide them as a aresult of the previous experiment
-    'max_features': [64, 128, None],
-    'max_df': [0.95, 0.5, 0.25],
-    'min_df': [3, 5],
-    # Hyperparams for GBT: controls model complexity. Use 
-    'max_depth': [3, 5]
+x_depth': [3, 5]
 ```
 **USE ONLY TRAIN SUBSET**
 
