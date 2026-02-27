@@ -193,10 +193,10 @@ with [langdetect](https://pypi.org/project/langdetect/)
     * Use CountVectorizer to compute  unigrams `ngram_range=(1,1)` and do not exclude any term from the vocabulary, setting appropiatelly: `max_df` and `min_df` (hint: check default values in documentation link) and obtain the DTM matrix (rows -> docs, cols -> terms)
     * Sum DTM matrix by cols so as to get a pandas series where the index is the term and the value is the frequency
 3. Get 10 most common and least common terms in the vocabulary.
+4. Save the `Top 30 most frequent terms` and `Vocabulary frequency: Bottom ` plot showing top 30 most frequent terms in `output/top_most_freq_terms.png`
+5. Save the `Bottom 30 least frequent terms with freq g10` plot showing top 30 least frequent terms with a frequency larger than 10 counts in `output/bottom_least_freq_terms.png`
 
-This should give  some hints on how to to set `max_df` and `min_df` for a proper model building experiment
-
-Optional: Analyze every text in the dataset to check whether there is any PII data by leveraing [Spacy Entity Recogntion](https://spacy.io/usage/spacy-101#annotations-ner)
+For both use a vertical plot bar with proper ordering, compare with provided results in `outputs/sample/` This should give some hints on how to to set `max_df` and `min_df` for a proper model building experiment
 
 
 ##  Perform Hiper Hyperparameter tunning for a NaiveBayes model
