@@ -311,7 +311,7 @@ python train.py ./data/raw/New%20Spanish%20Academic%20Dataset.csv 202602 --min_d
 ```
 
 
-## Prepare scoring artifacts and software
+## Develop score.py script and get prediction from production model artifacts
 Check that: In `models/prod` there are the required artifacts to build the model,
  and only the current champion model ones.
 
@@ -319,15 +319,33 @@ Check that: In `models/prod` there are the required artifacts to build the model
 and store the results in processed with the model in `models/prod`.
 2. Run a scoring job with the model built in 05_benchmark.ipynb
 
-```bash
-python score.py ./data/raw/New%20Spanish%20Academic%20Dataset.csv scoring_202507.csv
+
+
+This script will take as input:
+* Scoring raw data 
+* Prediction file name
+
+```python
+    parser.add_argument("path_data", type=str,
+                        help="Path to the input data, e.g. ./data/raw/my_file.csv")
+    parser.add_argument("output_file", type=str,
+                        help="Scored file name, e.g. scoring_YYYYMM.csv")
 ```
 
+```bash
+python score.py ./data/raw/New%20Spanish%20Academic%20Dataset.csv scoring_202602.csv
+```
+
+**Optional:** Develop a FastAPI prediction endpoint
 
 ## Write a Model Card
 
 Go over the model proposed by [Google Model Cards](https://modelcards.withgoogle.com/explore-a-model-card#model-summary-section)
 and write a simple MODEL_CARD.md
+
+For the  Model Card task, analyze:
+* Which terms are more important for the model and whether they make senses
+* Is the model robust for other languages?
 
 # References 
 [How to Set Up a Virtual Environment in Python – And Why It's Useful](https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/)
