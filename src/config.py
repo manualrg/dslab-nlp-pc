@@ -1,0 +1,3 @@
+RND_SEED = 123
+PCT_TEST = 0.2
+SCORE = "F1"
