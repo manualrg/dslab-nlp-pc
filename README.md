@@ -4,14 +4,9 @@ MBIT - MIA MAR 25
 
 # Pre Requisites
 
-Install Virtualenv package:
-```bash
-pip install virtualenv
-```
-
 Create a virtual environment
 ```bash
-python venv .venv
+python -m venv .venv
 ```
 
 Activate the Virtual Environment,
@@ -21,8 +16,17 @@ for example, with Win/Powershell: `.\.venv\Scripts\activate`
 
 Install dependencies
 ```bash
-pip install requirements.txt
+pip install -r requirements.txt
 ```
+
+This virtual environment has been built using Win11 and Python 3.10.9, 3.11 and 3.12 
+
+As project is based in notebooks, three popular approaches can be followed:
+* Install jupyter notebook: `pip install jupyter`
+* Install jupyterlab: `pip install jupyterlab`
+* Use VSCode notebooks extension: [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) 
+and install ipykernel with `pip install ipykernel`
+
 
 Download `spaCy` models:
 ```bash
@@ -36,7 +40,7 @@ python install_nltk_models.py
 ```
 
 Create the following folders:
-`
+```
 models/
  prod/
  archive/
@@ -44,15 +48,7 @@ models/
 data/
  interim/
  processed/
-`
-
-
-This virtual environment has been built using Python 3.10.9
-
-As project is based in notebooks, three popular approaches can be followed:
-* Install jupyter notebook: `pip install jupyter`
-* Install jupyterlab: `pip install jupyterlab`
-* Use VSCode notebooks extension and install ipykernell: [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
+```
 
 Check the `00_check_setup.ipynb` if everything is running
 
@@ -227,8 +223,6 @@ Instructions (04_exp_hpt_gbt.ipynb):
 * Use Stemming for term standartization.
 * Use early stopping with GBT
 2. GridSearchCV to run the set of experiments and get the summary, store it in `interim/exp02_hpt_gbt/df_exp_summary.csv`.
-
-
 **USE ONLY TRAIN SUBSET**
 
 (Optionally, build a HGBT)
@@ -348,5 +342,7 @@ For the  Model Card task, analyze:
 * Is the model robust for other languages?
 
 # References 
-[How to Set Up a Virtual Environment in Python – And Why It's Useful](https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/)
-[Cookiecutter Data Science](https://cookiecutter-data-science.drivendata.org/)
+* [How to Set Up a Virtual Environment in Python – And Why It's Useful](https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/)
+* [Cookiecutter Data Science](https://cookiecutter-data-science.drivendata.org/)
+* [PyTest for Data Science](https://codecut.ai/pytest-for-data-scientists/)
+* [Argparse Tutorial](https://docs.python.org/3/howto/argparse.html)

@@ -35,9 +35,8 @@ logging.basicConfig(
 def main(
     path_data: str,
     model_version_id: str,
+    # TODO: Add your arguments
     min_df: int,
-    max_df: float,
-    max_features: int
 ) -> None:
     """
     Main training pipeline.
@@ -139,6 +138,5 @@ if __name__ == "__main__":
         args.model_version_id,
         # TODO: Add your arguments
         args.min_df,
-        args.max_df,
-        args.max_features
+
     )
