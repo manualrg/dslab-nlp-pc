@@ -282,11 +282,34 @@ Implement a coherent training pipeline, consider that:
 * takes input dataset from `data/raw`, splits the data in train and test, fits the `champion model` and evaluate it in test data. Finally, archives prior model version and saves current one to `models/prod`.
 
 
-Retrain the model to store artifacts in `models/prod`  with the hyperparameters decided previously
+This script will retrain the model to store artifacts in `models/prod`  with the hyperparameters decided previously
 
+Customize your script arguments for your champion model hiperparameter:
+
+```python
+    # TODO: Add your arguments
+    parser.add_argument("--min_df", type=int, default=3, help="Min document frequency for vectorizer.")
+```
+
+This script will take as input:
+* Raw data 
+* model version ID to be stored (e.g. 202602)
+
+```python
+    parser.add_argument("path_data", type=str, help="Path to the raw dataset CSV file.")
+    parser.add_argument("model_version_id", type=str, help="Model version ID (e.g. 202602).")
+```
+
+To run the script:
 ```bash
 python train.py ./data/raw/New%20Spanish%20Academic%20Dataset.csv ${VERSION_ID} --min_df ${MIN_DF} --max_df ${MAX_DF}
 ```
+
+For example:
+```bash
+python train.py ./data/raw/New%20Spanish%20Academic%20Dataset.csv 202602 --min_df 5
+```
+
 
 ## Prepare scoring artifacts and software
 Check that: In `models/prod` there are the required artifacts to build the model,
