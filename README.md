@@ -250,7 +250,7 @@ The task is to refactor it to make a proper software project, this task will
 be completed by developing `src/models.py`:
 * In this Python module, you will move (and hopefully refine) the code
  in the notebooks to build the model, especifically:
-* Stemming `SpanishStemTokenizer`
+* Stemming `tokenizer_stemmer_es`
 * A function to get the stopwords already tokenized
 * `get_model`: should return a sklearn pipeline with the `champion model` architecture
 
