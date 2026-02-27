@@ -206,13 +206,6 @@ This Hyperparamenter Tunning campaign (HPT) should be focus on vocabulary size.
 This works by changing the Hyperparameters of the pipeline and obtaining  CV-metric for each
 configuration. The process is already implemented on sklearn in the [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) object.
 
-Run (at least) the following HP campaign:
-```python
-    'max_features': [64, 128, None],
-    'max_df': [0.95, 0.75, 0.5, 0.25],
-    'min_df': [1, 3, 5, 10],
-```
-
 
 Instructions (03_exp_hpt_naivebayes.ipynb):
 1. Build a [sklearn Pipeline](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline) that fits a XXXVectorizer and a NaiveBayes model. Consider the most appropiate method to build the DTM matrix. Use stemming to standardize terms and unigrams only.
@@ -229,25 +222,17 @@ This will run a CV job on every configuration defined by the grid.
 The result is that a set of models is fit and validated, so it is easy to compare to other
 experiments
 
-Instructions (03_exp_hpt_nb.ipynb):
-1. Build a sklearn Pipeline that fits a Vectorizer and Naive Bayes classifier.
-    * Use Stemming for term standartization, with only unigrams
-    * Use early stopping with GBT
-    * Select the proper vectorization and NB combination
-2. GridSearchCV to run the set of experiments and get the summary, store it in `interim/exp01_hpt_nb/df_exp_summary.csv`.
-
-
 Instructions (04_exp_hpt_gbt.ipynb):
 1. Build a sklearn Pipeline that fits a [GBT](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html).
 * Use Stemming for term standartization.
 * Use early stopping with GBT
-2. GridSearchCV to run the set of experiments and get the summary, store it in `interim/exp01_hpt_nb/df_exp_summary.csv`.
+2. GridSearchCV to run the set of experiments and get the summary, store it in `interim/exp02_hpt_gbt/df_exp_summary.csv`.
 
-x_depth': [3, 5]
-```
+
 **USE ONLY TRAIN SUBSET**
 
 (Optionally, build a HGBT)
+
 
 ## Benchmark every model candidate and choose a `champion model`
 Read CV metrics from interim for every experiment and select a `champion model` 
