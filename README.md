@@ -24,13 +24,13 @@ Install dependencies
 pip install requirements.txt
 ```
 
-Donwload `spaCy` models:
+Download `spaCy` models:
 ```bash
 python -m spacy download en_core_news_sm
 python -m spacy download es_core_news_md
 python -m spacy download es_core_news_lg
 ```
-Donwload `nltk` models:
+Download `nltk` models:
 ```bash
 python install_nltk_models.py
 ```
@@ -46,6 +46,7 @@ data/
  processed/
 `
 
+
 This virtual environment has been built using Python 3.10.9
 
 As project is based in notebooks, three popular approaches can be followed:
@@ -53,6 +54,7 @@ As project is based in notebooks, three popular approaches can be followed:
 * Install jupyterlab: `pip install jupyterlab`
 * Use VSCode notebooks extension and install ipykernell: [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
 
+Check the `00_check_setup.ipynb` if everything is running
 
 
 # Model lifecycle
@@ -84,7 +86,7 @@ metadata.pickle
     metadata.pickle
 ```
 
-Usually, the convention name to subfoldersis assigned to the `model_version_id` metadata
+Usually, the convention name to subfoldersis assigned to the `model_version_id` metadata. So our `model_version_id` is `YYYYMM`
 
 
 # Project Structure
@@ -94,11 +96,12 @@ provide a familiar and repeatable structure.
 ## Data folder (data/)
 Contains data assets related to the project. It is divided in 3 folders
 * raw/: Input and auxiliary data assets
-* interim/: Optional folder to store intermediate results
-* processed/: Test subset data and predictions
+* interim/: Input dataset with standard column naming (`prep.csv`) with Train and Test subsets (`train.csv` and `test.csv`) for reproducible experiments and experiments results (.e.g `exp01_hpt_nb/df_exp_summary.csv`)
+* processed/: Predictions (`scoring_YYYYMM.csv`)
+
 
 ## Models Folder: Model Registry (models/)
-Stores the artifacts (like `.pkl`, plots, tables, and so on) created after 
+Stores the artifacts (like `model.pickle`, plots, tables, and so on) created after 
 training and evaluating a champion model
 
 ## Source code folder (src/)
@@ -110,13 +113,13 @@ Unit testing of the source code
 ## Scripts
 Scripts should be placed in project root
 The project should contain a `train.py` script that implements
-the software needed to automate the training  of the `champion model` 
-(by repeating the proceess followed in experimentation and benchmarking).
+the code needed to automate the training  of the `champion model` architecture (algorithm + hiperparameters)
+(by repeating the proceess followed in experimentation and benchmarking) and storing the resulting artifacts in `models/` as stated.
 
 In addition, regarding the deployment of the `champion model` there should be one 
 oj the following alternatives:
-* A `score.py` script to run (in batch) predictions
-* A script to run a REST API HTTP Server to obtain predictions in real time
+* A `score.py` script to run (in batch) predictions from the `models/prod/` artifacts (Compulsory) 
+* A script to run a REST API HTTP Server to obtain predictions in real time (Optinal)
 
 ## Notebooks
 Noteboks can be placed in project root, as long as there are only a handfull of 
