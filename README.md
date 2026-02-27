@@ -139,17 +139,17 @@ with predictive models, some tweaks maybe recommended
 
 # Task Description
 Build a binary classification model (0/1) by following the next steps:
-1. Load data
-2. Split Data
-3. Perform an Exploratory Data Analysis
-4. Perform Hiper Hyperparameter tunning for a NaiveBayes model
-5. Perform Hiper Hyperparameter tunning for a GBT model
-6. Benchmark every model candidate and choose a `champion model`
-7. Implement source code
-8. Write unit tests
-9. Develop train.py script and train a model and generate scoring artifacts
-10. Develop train.py script and run predictions
-11. Write a Model Card
+1. Load data (0.5 pts)
+2. Split Data (0.5 pts)
+3. Perform an Exploratory Data Analysis (1 pts)
+4. Perform Hiper Hyperparameter tunning for a NaiveBayes model (1 pts)
+5. Perform Hiper Hyperparameter tunning for a GBT model (1 pts)
+6. Benchmark every model candidate and choose a `champion model` (1 pts)
+7. Implement source code (1 pts)
+8. Write unit tests (1 pts)
+9. Develop train.py script and train a model and generate scoring artifacts (1 pts)
+10. Develop score.py script and get prediction from production model artifacts (1 pts)
+11. Write a Model Card (1 pts)
 
 ## Load data
 Proposed dataset for this project is from HuggingFace Dataset

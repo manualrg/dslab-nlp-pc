@@ -177,3 +177,6 @@ cython_debug/
 data/interim/*
 data/processed/*
 models/*
+
+outputs/Bottom 30 least frequent terms with freq g10.png
+outputs/Top 30 most frequent terms.png
